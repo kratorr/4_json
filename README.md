@@ -1,18 +1,32 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+This program prints a JSON file to the console in the pretty format.
 
 # Quickstart
 
-[TODO]
+The program must be run using the console, the required argument is the path to the file.
 
-Example of script launch on Linux, Python 3.5:
-
+How to run:
 ```bash
-
-$ python pprint_json.py <path to file>
-# TODO add output example
-
+$ python3 pprint_json.py <file_path>
+```
+Example of script launch on Linux, Python 3.5:
+```bash
+$ python3 pprint_json.py geo.json
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "A geographical coordinate",
+    "id": "http://json-schema.org/geo",
+    "properties": {
+        "latitude": {
+            "type": "number"
+        },
+        "longitude": {
+            "type": "number"
+        }
+    },
+    "type": "object"
+}
 ```
 
 # Project Goals
