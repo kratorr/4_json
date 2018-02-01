@@ -3,9 +3,9 @@ import sys
 import os
 
 def load_data(filepath):
-    with open(filepath, "r", encoding="utf-8") as json_file:
-        decoded_json = json.load(json_file)
-        return decoded_json
+        with open(filepath, "r", encoding="utf-8") as json_file:
+            decoded_json = json.load(json_file)
+            return decoded_json
 
 
 def pretty_print_json(json_object):
@@ -15,7 +15,10 @@ def pretty_print_json(json_object):
 if __name__ == "__main__":
     try:
         filepath = sys.argv[1]
-        data_for_print = load_data(filepath)
-        pretty_print_json(data_for_print)
-    except:
-        raise FileNotFoundError
+        if os.path.isfile(filepath):
+            data_for_print = load_data(filepath)
+            pretty_print_json(data_for_print)
+        else:
+            print("File not found")
+    except IndexError:
+        print("Arguments error")
