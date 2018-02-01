@@ -6,7 +6,7 @@ import os
 def load_data(filepath):
     with open(filepath, "r", encoding="utf-8") as json_file:
         decoded_json = json.load(json_file)
-        return decoded_json
+    return decoded_json
 
 
 def pretty_print_json(json_content):
